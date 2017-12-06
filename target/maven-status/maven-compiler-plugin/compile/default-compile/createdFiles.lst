@@ -1,0 +1,7 @@
+no/inmeta/empmanagement/dao/EmployeeDAO.class
+no/inmeta/empmanagement/dao/EmployeeDAOImp.class
+no/inmeta/empmanagement/model/Employee.class
+no/inmeta/empmanagement/controller/EmployeeController.class
+no/inmeta/empmanagement/Application.class
+no/inmeta/empmanagement/repository/EmployeeRepository.class
+no/inmeta/empmanagement/dao/EmployeeDaoMapper.class
