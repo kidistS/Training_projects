@@ -4,6 +4,7 @@ import no.inmeta.empmanagement.model.Employee;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.Repository;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.sql.Date;
 import java.util.List;
@@ -21,4 +22,6 @@ public interface EmployeeRepository extends CrudRepository<Employee,Long> , JpaS
    List<Employee> findByLastName(String last_name);
 
    List<Employee> findByStartDateBefore(Date hire_date);
+
+   Employee create(Employee employee, UriComponentsBuilder ucBuilder);
 }
