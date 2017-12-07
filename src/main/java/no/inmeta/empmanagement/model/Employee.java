@@ -27,7 +27,7 @@ public class Employee {
     private String gender;
 
     @Column(name = "hire_date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-mm-yyyy")
     private Date startDate;
 
     public Employee(){
@@ -91,6 +91,7 @@ public class Employee {
         return startDate;
     }
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd")
     public void setHireDate(Date hireDate) {
         this.startDate = hireDate;
     }
