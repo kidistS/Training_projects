@@ -1,22 +1,18 @@
 package no.inmeta.empmanagement.controller;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import no.inmeta.empmanagement.model.Employee;
 import no.inmeta.empmanagement.repository.EmployeeRepository;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.core.MediaType;
 import java.sql.Date;
 import java.util.List;
-
-import static org.springframework.http.MediaType.APPLICATION_JSON;
 
 
 @RestController
@@ -84,35 +80,56 @@ public class EmployeeController {
         return employeeHDate;
 
     }
-/*
 
-    // Handler which Create Employees
-    @RequestMapping(value = "/employeesSaved", method = RequestMethod.POST)
-    public Employee create(@RequestBody Employee json){
-
-        Employee employee  = employeeRepository.save(json);
-
-        return employee;
-
-    }
-*/
-
-
-    // Handler which Create Employees
+    // Handler for  Creating new Employees
+    @Consumes(MediaType.APPLICATION_JSON)
     @RequestMapping(value = "/employeesCreate", method = RequestMethod.POST)
-    public ResponseEntity<Void> create(@RequestBody Employee employee, UriComponentsBuilder ucBuilder) {
+    public ResponseEntity<?> create(@RequestBody Employee employee){
 
-        if (employeeRepository.exists( employee.getId() )) {
-            System.out.println("An Employee with name " + employee.getFirstName() + " already exist");
-            return new ResponseEntity<Void>( HttpStatus.CONFLICT);
+        try {
+
+            employeeRepository.save( employee );
+            return ResponseEntity.ok( employee.getId() );
+
+        }catch (Exception ex){
+            return ResponseEntity.status( HttpStatus.INTERNAL_SERVER_ERROR).body( ex.getMessage() );
         }
-
-        employeeRepository.save(employee);
-
-        HttpHeaders headers = new HttpHeaders();
-        headers.setLocation(ucBuilder.path("/employeesCreate/{id}").buildAndExpand(employee.getId()).toUri());
-        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
     }
 
+
+    @Consumes(MediaType.APPLICATION_JSON)
+    @RequestMapping(value = "/employeesGet", method = RequestMethod.GET)
+    public ResponseEntity<?> get(@PathVariable ("emp_no") long emp_no){
+
+        try {
+
+             employeeRepository.findOne(emp_no);
+            return ResponseEntity.ok( emp_no);
+
+        }catch (Exception ex){
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    // Handler for updating an existing Employees
+    @Consumes(MediaType.APPLICATION_JSON)
+    @RequestMapping(value = "/employeesUpdate/{id}", method = RequestMethod.PUT)
+    public ResponseEntity<?> update(@PathVariable ("id") String emp_no, @RequestBody Employee employeeList){
+
+        long emp_no1 = Long.valueOf( emp_no );
+
+        try {
+
+            Employee existEmployee = employeeRepository.findOne(emp_no1 );
+            BeanUtils.copyProperties(employeeList, existEmployee );
+            employeeRepository.save( existEmployee );
+
+            return ResponseEntity.ok( emp_no1 );
+
+        }catch (Exception ex){
+           // return ResponseEntity.status( HttpStatus.INTERNAL_SERVER_ERROR).body( ex.getMessage() );
+            return ResponseEntity.notFound().build();
+        }
+    }
 
 }

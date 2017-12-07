@@ -1,15 +1,14 @@
 package no.inmeta.empmanagement.repository;
 
 import no.inmeta.empmanagement.model.Employee;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.Repository;
-import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.stereotype.Component;
 
 import java.sql.Date;
 import java.util.List;
 
-public interface EmployeeRepository extends CrudRepository<Employee,Long> , JpaSpecificationExecutor<Employee>, Repository <Employee, Long>{
+@Component
+public interface EmployeeRepository extends CrudRepository<Employee,Long> {
 
    Employee findById(Long id);
 
@@ -23,5 +22,7 @@ public interface EmployeeRepository extends CrudRepository<Employee,Long> , JpaS
 
    List<Employee> findByStartDateBefore(Date hire_date);
 
-   Employee create(Employee employee, UriComponentsBuilder ucBuilder);
+   //String create(Long emp_no, String birth_date, String first_name, String last_name, String gender, Date hire_date);
+
+   //Employee update(Long emp_no, Employee employee);
 }

@@ -3,7 +3,7 @@ package no.inmeta.empmanagement.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 
 @Entity
 @Table(name = "employees")
@@ -15,7 +15,9 @@ public class Employee {
     private long id;
 
     @Column(name = "birth_date")
-    private String birthDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @Temporal(TemporalType.DATE)
+    private Date birthDate;
 
     @Column(name = "first_name")
     private String firstName;
@@ -27,14 +29,15 @@ public class Employee {
     private String gender;
 
     @Column(name = "hire_date")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-mm-yyyy")
+    @Temporal(TemporalType.DATE)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date startDate;
 
     public Employee(){
 
     }
 
-    public Employee(Long ID,String bDate, String fName, String lName, String gender, Date hDate){
+    public Employee(Long ID,Date bDate, String fName, String lName, String gender, Date hDate){
 
         this.id = ID;
         this.birthDate = bDate;
@@ -54,11 +57,11 @@ public class Employee {
         this.id = id;
     }
 
-    public String getBirth_date() {
+    public Date getBirth_date() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -86,12 +89,10 @@ public class Employee {
         this.gender = gender;
     }
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd")
     public Date getHire_date() {
         return startDate;
     }
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-mm-dd")
     public void setHireDate(Date hireDate) {
         this.startDate = hireDate;
     }

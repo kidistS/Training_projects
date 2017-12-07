@@ -34,28 +34,28 @@ public class EmployeeControllerTest {
     public void init(){
 
         employee1.setId(10001);
-        employee1.setBirthDate( "1990-10.01" );
+        employee1.setBirthDate( new Date( 1990-10-01) );
         employee1.setFirstName( "Johanna" );
         employee1.setLastName( "Jon" );
         employee1.setGender( "F" );
         employee1.setHireDate(new Date( 2000-12-01 ));
 
         employee2.setId(10002);
-        employee2.setBirthDate( "1987-01-21" );
+        employee2.setBirthDate(new Date(  1987-01-21) );
         employee2.setFirstName( "Kim" );
         employee2.setLastName( "Jakob" );
         employee2.setGender( "M" );
         employee2.setHireDate(new Date(1967-01-18));
 
         employee3.setId(10003);
-        employee3.setBirthDate( "1970-12.21" );
+        employee3.setBirthDate(new Date(1970-12-21) );
         employee3.setFirstName( "Tam" );
         employee3.setLastName( "Tommi" );
         employee3.setGender( "F" );
         employee3.setHireDate(new Date( 1996-01-01 ) );
 
         employee4.setId(10004);
-        employee4.setBirthDate( "1977-10.01" );
+        employee4.setBirthDate(new Date(1977-10-01) );
         employee4.setFirstName( "Tam-like" );
         employee4.setLastName( "Tommi" );
         employee4.setGender( "F" );
