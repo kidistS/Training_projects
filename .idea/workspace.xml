@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f26eef1-4a4c-40bb-be28-fe86ad4b986f" name="Default" comment="Revised &amp; finalized Create, Update, and Test">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+    <list default="true" id="3f26eef1-4a4c-40bb-be28-fe86ad4b986f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/no/inmeta/empmanagement/controller/EmployeeController.class" afterPath="$PROJECT_DIR$/target/classes/no/inmeta/empmanagement/controller/EmployeeController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/EmployeeControllerTest.class" afterPath="$PROJECT_DIR$/target/test-classes/EmployeeControllerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/controller/EmployeeController.java" afterPath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/controller/EmployeeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/model/Employee.java" afterPath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/model/Employee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/EmployeeControllerTest.java" afterPath="$PROJECT_DIR$/src/test/java/EmployeeControllerTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,8 +48,8 @@
       <file leaf-file-name="EmployeeControllerTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/EmployeeControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="47" column="52" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
+            <state relative-caret-position="434">
+              <caret line="60" column="10" lean-forward="true" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -467,7 +463,7 @@
       <workItem from="1512720810251" duration="586000" />
       <workItem from="1512721554966" duration="4624000" />
       <workItem from="1512726229119" duration="4315000" />
-      <workItem from="1512732804046" duration="5213000" />
+      <workItem from="1512732804046" duration="5238000" />
     </task>
     <task id="LOCAL-00001" summary="save EmployeeRepository">
       <created>1512634209802</created>
@@ -483,7 +479,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512663922092</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Revised &amp; finalized Create, Update, and Test">
+      <created>1512738030812</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1512738030812</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -519,7 +522,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="163683000" />
+    <option name="totallyTimeSpent" value="163708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-1" width="1922" height="936" extended-state="6" />
@@ -936,8 +939,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/EmployeeControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="47" column="52" lean-forward="true" selection-start-line="47" selection-start-column="52" selection-end-line="47" selection-end-column="52" />
+        <state relative-caret-position="434">
+          <caret line="60" column="10" lean-forward="true" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
           <folding />
         </state>
       </provider>
