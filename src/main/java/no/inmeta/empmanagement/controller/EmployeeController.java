@@ -15,75 +15,67 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/employees")
 public class EmployeeController {
 
-    //@Autowired
+    @Autowired
     private EmployeeRepository employeeRepository;
 
 
-    // List all Employees
-    @RequestMapping(value = "/all")
+    //      List all Employees
+    @RequestMapping(value = "/employees/all")
     public List<Employee> findAll (){
 
-        //List <Employee> employeeList = employeeRepository.findAll();
-
-        return employeeRepository.findAll();
+        List <Employee> employeeList = employeeRepository.findAll();
+        return employeeList;
     }
 
-    // List Employee by Id
-    @RequestMapping("{id}")
+    //      List Employee by Id
+    @RequestMapping("/employees")
     public Employee findById (@RequestParam long id){
 
-        //Employee employee = employeeRepository.findById(id);
-
-        return employeeRepository.findById(id);
+        Employee employeeId = employeeRepository.findById(id);
+        return employeeId;
     }
 
-    //  List Employees by their first_name
-    @RequestMapping("/ByFirstName")
+    //      List Employees by their first_name
+    @RequestMapping("/employeesByFirstName")
     public List<Employee> findByFirstName(@RequestParam String first_name){
 
-       // List<Employee> employeeFName= employeeRepository.findByFirstName(first_name);
-
-        return employeeRepository.findByFirstName(first_name);
+        List <Employee> employeeFN = employeeRepository.findByFirstName(first_name);
+        return employeeFN;
 
     }
 
-    //   List Employees by their first_name like %s
-    @RequestMapping("/ByFirstNameLike")
+    //      List Employees by their first_name like %s
+    @RequestMapping("/employeesByFirstNameLike")
     public List<Employee> findByFirstNameLike(@RequestParam String first_name){
 
-        //List<Employee> employeeFName= employeeRepository.findByFirstNameLike(first_name);
-
-        return employeeRepository.findByFirstNameLike(first_name);
+        List<Employee> employeesFNL = employeeRepository.findByFirstNameLike(first_name);
+        return employeesFNL;
 
     }
 
 
     //      List Employees by their last_name
-    @RequestMapping("/ByLastName")
+    @RequestMapping("/employeesByLastName")
     public List<Employee> findByLastName(@RequestParam String last_name){
 
-        //List<Employee> employeeLName= employeeRepository.findByLastName(last_name);
-
-        return employeeRepository.findByLastName(last_name);
+        List<Employee> employeesLN = employeeRepository.findByLastName(last_name);
+        return employeesLN;
 
     }
 
-    //     List employees those are hired before hire_date
-    @RequestMapping("/HireDateBefore")
+    //      List employees those are hired before hire_date
+    @RequestMapping("/employeesHireDateBefore")
     public List<Employee> findByStartDateBefore(@RequestParam Date hire_date){
 
-       // List<Employee> employeeHDate= employeeRepository.findByStartDateBefore(hire_date);
-
-        return employeeRepository.findByStartDateBefore(hire_date);
-
+        List<Employee> employeesSDB = employeeRepository.findByStartDateBefore(hire_date);
+        return employeesSDB;
     }
 
-    //   Creating new Employees
+    //      Create new Employees
     @Consumes(MediaType.APPLICATION_JSON)
-    @RequestMapping(value = "/Create", method = RequestMethod.POST)
+    @RequestMapping(value = "/employeesCreate", method = RequestMethod.POST)
     public ResponseEntity<?> create(@RequestBody Employee employee){
 
         try {
@@ -96,12 +88,10 @@ public class EmployeeController {
         }
     }
 
-    //      Updating the existing Employees
+    //      Update the existing Employees
     @Consumes(MediaType.APPLICATION_JSON)
-    @RequestMapping(value = "/Update", method = RequestMethod.PUT)
+    @RequestMapping(value = "/employeesUpdate", method = RequestMethod.PUT)
     public ResponseEntity<?> update( @RequestParam(value = "emp_no") long emp_no, @RequestBody Employee employeeList){
-
-     //   long longId = Long.valueOf( emp_no );
 
         try {
 
@@ -122,7 +112,7 @@ public class EmployeeController {
 
             return new ResponseEntity<Employee>(HttpStatus.NOT_FOUND);
         }
-
     }
+
 
 }

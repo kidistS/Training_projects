@@ -3,12 +3,11 @@ package no.inmeta.empmanagement.model;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "employees")
-public class Employee implements Serializable {
+public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

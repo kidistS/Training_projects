@@ -124,16 +124,16 @@ public class EmployeeControllerTest {
 
     }
 
- /*   @Test
+    @Test
     public void testStartDateBefore( ){
 
         when(employeeRepository.findByStartDateBefore(new Date(2017-01-18))).thenReturn(employeeList);
 
         List<Employee> employeeFound = employeeController.findByStartDateBefore(new Date( 2017-01-18 ));
         verify( employeeRepository).findByStartDateBefore(new Date( 2017-01-18 ));
-        assertEquals("Hire Date after 2017-01-03 is found", employeeFound.size()==1, employeeFound.size()==1);
+        assertEquals("Hire Date after 198-01-03 is found", employeeFound.size()==4, employeeFound.size()==4);
 
-    }*/
+    }
 
 
 }
