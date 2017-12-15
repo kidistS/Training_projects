@@ -2,42 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f26eef1-4a4c-40bb-be28-fe86ad4b986f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fge_btf_1_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fge_jackson_coreutils_1_6.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fge_json_patch_1_9.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fge_msg_simple_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_findbugs_jsr305_2_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_16_0_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_restassured_json_path_2_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_restassured_rest_assured_2_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_restassured_rest_assured_common_2_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_restassured_xml_path_2_9_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_codec_commons_codec_1_10.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_3_2.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpclient_4_5_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpcore_4_4_8.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_httpcomponents_httpmime_4_5_3.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_ccil_cowan_tagsoup_tagsoup_1_2_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_2_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_json_2_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_xml_2_4_12.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_kotlin_kotlin_stdlib_js_1_2_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/controller/JsonPatchController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/controller/common/JsonPatcher.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/controller/common/RestMediaType.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/model/NameResource.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/model/ResourceBuilder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/PatchRequestTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/no/inmeta/empmanagement/controller/EmployeeController.class" afterPath="$PROJECT_DIR$/target/classes/no/inmeta/empmanagement/controller/EmployeeController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/no/inmeta/empmanagement/model/Employee.class" afterPath="$PROJECT_DIR$/target/classes/no/inmeta/empmanagement/model/Employee.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/no/inmeta/empmanagement/repository/EmployeeRepository.class" afterPath="$PROJECT_DIR$/target/classes/no/inmeta/empmanagement/repository/EmployeeRepository.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/EmployeeControllerTest.class" afterPath="$PROJECT_DIR$/target/test-classes/EmployeeControllerTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Employee_Mgt.iml" afterPath="$PROJECT_DIR$/Employee_Mgt.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/controller/EmployeeController.java" afterPath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/controller/EmployeeController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/model/Employee.java" afterPath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/model/Employee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/repository/EmployeeRepository.java" afterPath="$PROJECT_DIR$/src/main/java/no/inmeta/empmanagement/repository/EmployeeRepository.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -618,7 +587,7 @@
       <workItem from="1513252423649" duration="8174000" />
       <workItem from="1513324609329" duration="3335000" />
       <workItem from="1513330000192" duration="776000" />
-      <workItem from="1513345836028" duration="423000" />
+      <workItem from="1513345836028" duration="557000" />
     </task>
     <task id="LOCAL-00001" summary="save EmployeeRepository">
       <created>1512634209802</created>
@@ -641,7 +610,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512738030812</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Patch method implement, but not successful">
+      <created>1513346387461</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1513346387461</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -677,7 +653,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224509000" />
+    <option name="totallyTimeSpent" value="224643000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1922" height="936" extended-state="6" />
@@ -727,7 +703,8 @@
     <MESSAGE value="Creating new employees method is done. And Updating an employees method is on progress." />
     <MESSAGE value="Update method is finished." />
     <MESSAGE value="Revised &amp; finalized Create, Update, and Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revised &amp; finalized Create, Update, and Test" />
+    <MESSAGE value="Patch method implement, but not successful" />
+    <option name="LAST_COMMIT_MESSAGE" value="Patch method implement, but not successful" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
