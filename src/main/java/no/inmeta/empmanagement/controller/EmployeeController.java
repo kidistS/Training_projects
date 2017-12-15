@@ -1,6 +1,10 @@
 package no.inmeta.empmanagement.controller;
 
+import com.github.fge.jsonpatch.JsonPatchException;
+import no.inmeta.empmanagement.controller.common.JsonPatcher;
+import no.inmeta.empmanagement.controller.common.RestMediaType;
 import no.inmeta.empmanagement.model.Employee;
+import no.inmeta.empmanagement.model.NameResource;
 import no.inmeta.empmanagement.repository.EmployeeRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +12,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.core.MediaType;
 import java.sql.Date;
 import java.util.List;
-
+import java.util.Optional;
 
 @RestController
 public class EmployeeController {
@@ -67,7 +72,7 @@ public class EmployeeController {
 
     //      List employees those are hired before hire_date
     @RequestMapping("/employeesHireDateBefore")
-    public List<Employee> findByStartDateBefore(@RequestParam Date hire_date){
+    public List<Employee> findByStartDateBefore(@RequestParam (value = "startDate") Date hire_date ){
 
         List<Employee> employeesSDB = employeeRepository.findByStartDateBefore(hire_date);
         return employeesSDB;
@@ -91,18 +96,18 @@ public class EmployeeController {
     //      Update the existing Employees
     @Consumes(MediaType.APPLICATION_JSON)
     @RequestMapping(value = "/employeesUpdate", method = RequestMethod.PUT)
-    public ResponseEntity<?> update( @RequestParam(value = "emp_no") long emp_no, @RequestBody Employee employeeList){
+    public ResponseEntity<?> update( @RequestParam(value = "id") long emp_no, @RequestBody Employee employeeList){
 
         try {
 
             Employee existEmployee = employeeRepository.findOne(emp_no );
 
             existEmployee.setId( employeeList.getId() );
-            existEmployee.setBirthDate( employeeList.getBirth_date() );
+            existEmployee.setBirthDate( employeeList.getBirthDate());
             existEmployee.setFirstName( employeeList.getFirstName() );
             existEmployee.setLastName(  employeeList.getLastName() );
             existEmployee.setGender( employeeList.getGender() );
-            existEmployee.setHireDate( employeeList.getHire_date() );
+            existEmployee.setHireDate( employeeList.getStartDate());
 
             employeeRepository.save( existEmployee );
 
@@ -110,8 +115,50 @@ public class EmployeeController {
 
         }catch (Exception ex){
 
-            return new ResponseEntity<Employee>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Employee>( HttpStatus.NOT_FOUND);
         }
+    }
+
+    private JsonPatcher jsonPatcher;
+
+    public JsonPatcher getJsonPatcher() {
+        return jsonPatcher;
+    }
+
+    public void setJsonPatcher(JsonPatcher jsonPatcher) {
+        this.jsonPatcher = jsonPatcher;
+    }
+
+    //      Update specific entities of an Employee
+    @RequestMapping(value = "/updatePartially", method = RequestMethod.PATCH,
+            consumes = RestMediaType.APPLICATION_MERGE_PATCH_JSON_VALUE,
+            produces = RestMediaType.APPLICATION_PATCH_JSON_VALUE)
+    public ResponseEntity<?> updatePartial(@RequestParam(value = "id") long emp_no, @RequestBody String updateResource) {
+
+        Employee existEmployee = employeeRepository.findOne(emp_no );
+
+        try {
+
+            NameResource nameResource = new NameResource();
+
+            nameResource.setId( emp_no );
+            nameResource.setFirstName(updateResource );
+
+            existEmployee.setId( nameResource.getId() );
+            existEmployee.setFirstName(nameResource.getFirstName());
+
+
+            Optional<Employee> patched = jsonPatcher.patch( updateResource, existEmployee );
+            return new ResponseEntity<>( patched.get() , HttpStatus.OK);
+
+        }catch (RuntimeException ex){
+            if(JsonPatchException.class.isAssignableFrom( ex.getCause() .getClass())){
+                return  new ResponseEntity<>( existEmployee, HttpStatus.NOT_FOUND );
+            }
+
+        }
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
     }
 
 

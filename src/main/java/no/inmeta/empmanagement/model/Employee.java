@@ -57,7 +57,7 @@ public class Employee {
         this.id = id;
     }
 
-    public Date getBirth_date() {
+    public Date getBirthDate() {
         return birthDate;
     }
 
@@ -89,7 +89,7 @@ public class Employee {
         this.gender = gender;
     }
 
-    public Date getHire_date() {
+    public Date getStartDate() {
         return startDate;
     }
 

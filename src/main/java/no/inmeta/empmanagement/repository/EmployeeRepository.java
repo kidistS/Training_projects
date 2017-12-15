@@ -2,9 +2,10 @@ package no.inmeta.empmanagement.repository;
 
 import no.inmeta.empmanagement.model.Employee;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -22,7 +23,8 @@ public interface EmployeeRepository extends CrudRepository<Employee,Long> {
 
    List<Employee> findByStartDateBefore(Date hire_date);
 
-   //String create(Long emp_no, String birth_date, String first_name, String last_name, String gender, Date hire_date);
+    //EmployeeFirstNameOnly partialUpdateName(EmployeeFirstNameOnly firstNameOnly, Long id);
 
-   //Employee update(Long emp_no, Employee employee);
+  // ResponseEntity<?> updatePartially(Long id, String newResource);
+
 }
